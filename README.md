@@ -1,59 +1,51 @@
-# MyWorkspace
+# Ninja Table
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.2.
+This project was created to extract and generalize a dynamic table solution originally developed while volunteering on an online member directory for a non-profit organization.
 
-## Development server
+The idea for this library dates back several years and was inspired by a [LinkedIn post](https://www.linkedin.com/pulse/creating-custom-angular-4-pagination-component-roshan-george-v/) I wrote at the time. Since then, I have continued refining and expanding the concept, building multiple configurable tables capable of rendering and manipulating dynamic data through a JSON-based configuration.
 
-To start a local development server, run:
+The goal of this project is to provide:
+1. A flexible, reusable dynamic table component
+2. Configuration-driven behavior via JSON
+3. Clean separation between structure, data, and logic
+4. A foundation that can be extended for various use cases
 
-```bash
-ng serve
-```
+The commits will be sequential, and will be completed based on time availability.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Using the library locally
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Build the library and link NPM locally, run:
 
 ```bash
-ng generate --help
+ng build ninja-table
+cd ./dist/ninja-table
+npm link
 ```
 
-## Building
-
-To build the project run:
+Open the client application consuming the library, run:
 
 ```bash
-ng build
+npm link ninja-table
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+This command will compile add nonja-table library to your project, and places ninja-table inside node_modules folder.
 
-## Running unit tests
+### Using the Ninja Table in the consuming Angular components
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Once the library is imported, you can start using it to display data by following these steps:
 
-```bash
-ng test
-```
+1. Create a sample `config JSON` object similar to the one below:
+   ```bash
+   config: TableConfig = {
+      columns: [
+         { id: 'name', key: 'name', title: 'Name' },
+         { id: 'city', key: 'address.city', title: 'City' },
+         { id: 'created', key: 'createdAt', title: 'Created', type: 'datetime' }
+      ],
+   };
+   ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+2. In the component HTMl, add Ninja Table library selector as follows:
+   ```bash
+   <ninja-table [rows]="rows" [config]="config"></ninja-table>
+   ```
