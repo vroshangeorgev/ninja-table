@@ -1,0 +1,25 @@
+<div class="rgv-warp">
+    <!-- To do : column chooser -->
+    <div class="rgv-empty" *ngIf="!rows?.length">
+        {{config?.emptyText ?? 'No Data'}}
+    </div>
+    <!-- To do : search, sort -->
+    <table class="rgv-table" *ngIf="rows?.length">
+        <thead>
+            <tr>
+                <th *ngFor="let column of visibleColumns;trackBy: trackByColId" [class]="column.headerClass??''">
+                    {{column.title}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of rows">
+                <td *ngFor="let column of visibleColumns;trackBy: trackByColId" [class]="column.cellClass??''"
+                    [title]="displayValue(row,column)">
+                    {{displayValue(row,column)}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- To do : pagination -->
+</div>

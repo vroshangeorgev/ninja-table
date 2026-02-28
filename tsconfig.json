@@ -7,6 +7,14 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
+    "paths": {
+      "ninja-table": [
+        "./dist/ninja-table"
+      ],
+      "ninja-tables": [
+        "./dist/ninja-tables"
+      ]
+    },
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "isolatedModules": true,
@@ -21,5 +29,13 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   },
-  "files": []
+  "files": [],
+  "references": [
+    {
+      "path": "./projects/ninja-table/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ninja-table/tsconfig.spec.json"
+    }
+  ]
 }

@@ -1,0 +1,30 @@
+/**
+* Author: Roshan
+* This is an initial commit.
+* To Do: Handle dynamic CSS
+*/
+
+.rgv-wrap {
+    width: 100%;
+}
+
+.rgv-empty {
+    padding: 20px;
+    opacity: 75%;
+}
+
+.rgv-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.rgv-table th,
+.rgv-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.rgv-table th {
+    background-color: #f7f7f7;
+}
