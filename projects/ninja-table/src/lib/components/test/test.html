@@ -1,0 +1,92 @@
+<p>test works!</p>
+<!-- <div class="rgv-warp">
+    <div class="rgv-empty" *ngIf="!rows?.length">
+        {{config?.emptyText ?? 'No Data'}}
+    </div>
+    <table class="rgv-table" *ngIf="rows?.length">
+        <thead>
+            <tr>
+                <th *ngFor="let column of visibleColumns;trackBy: trackByColId" [class]="column.headerClass??''">
+                    {{column.title}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of rows">
+                <td *ngFor="let column of visibleColumns;trackBy: trackByColId" [class]="column.cellClass??''"
+                    [title]="displayValue(row,column)">
+                    {{displayValue(row,column)}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+
+<div class="container py-4">
+    <div class="table-scroll bg-body">
+        <div class="table-responsive">
+
+     <!-- To do : column chooser, check box, action buttons -->
+    <div class="rgv-empty" *ngIf="!rows?.length">
+        {{config?.emptyText ?? 'No Data'}}
+    </div>
+    <!-- To do : search, sort -->
+
+            <table class="table table-hover table-striped mb-0 align-middle">
+                <thead class="table-light">
+
+                    <tr>
+                <th *ngFor="let column of visibleColumns;trackBy: trackByColId" [class]="column.headerClass??''">
+                    {{column.title}}
+                </th>
+            </tr>
+<!--             
+                    <tr>
+                        <th style="width: 52px;" class="text-center">
+                            <div class="form-check d-flex justify-content-center m-0">
+                                <input class="form-check-input" type="checkbox" id="checkAll" aria-label="Select all">
+                            </div>
+                        </th>
+                        <th style="width: 64px;">Photo</th>
+                        <th>Name</th>
+                        <th class="d-none d-md-table-cell">Role</th>
+                        <th>Email</th>
+                        <th class="d-none d-lg-table-cell">Location</th>
+                        <th>Status</th>
+                        <th style="width: 110px;" class="text-end">Actions</th>
+                    </tr> -->
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let row of rows">
+                        <td *ngFor="let column of visibleColumns;trackBy: trackByColId" [class]="column.cellClass??''"
+                    [title]="displayValue(row,column)">
+                    {{displayValue(row,column)}}
+                </td>
+
+                        <!-- <td class="text-center">
+                            <div class="form-check d-flex justify-content-center m-0">
+                                <input class="form-check-input" type="checkbox" aria-label="Select row 1">
+                            </div>
+                        </td>
+                        <td><img class="avatar" src="https://i.pravatar.cc/80?img=1" alt="Profile"></td>
+                        <td class="row-meta">
+                            <div class="fw-semibold">Avery Chen</div>
+                            <div class="muted">ID: U-1001</div>
+                        </td>
+                        <td class="d-none d-md-table-cell">Product Designer</td>
+                        <td><a href="#"
+                                class="link-offset-2 link-underline link-underline-opacity-0">avery.chen@example.com</a>
+                        </td>
+                        <td class="d-none d-lg-table-cell">Toronto</td>
+                        <td><span class="badge text-bg-success">Active</span></td>
+                        <td class="text-end">
+                            <button class="btn btn-sm btn-outline-secondary">View</button>
+                        </td> -->
+                    </tr>
+                </tbody>
+            </table>
+    <!-- To do : pagination -->
+        </div>
+    </div>
+</div> 

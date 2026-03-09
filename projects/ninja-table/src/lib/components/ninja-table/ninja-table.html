@@ -1,25 +1,35 @@
-<div class="rgv-warp">
-    <!-- To do : column chooser -->
-    <div class="rgv-empty" *ngIf="!rows?.length">
-        {{config?.emptyText ?? 'No Data'}}
-    </div>
-    <!-- To do : search, sort -->
-    <table class="rgv-table" *ngIf="rows?.length">
-        <thead>
-            <tr>
-                <th *ngFor="let column of visibleColumns;trackBy: trackByColId" [class]="column.headerClass??''">
-                    {{column.title}}
-                </th>
-            </tr>
+<div class="container py-4">
+  <div class="table-scroll bg-body">
+    <div class="table-responsive">
+      <!-- To do : column chooser -->
+      <div class="rgv-empty" *ngIf="!rows?.length">
+        {{ config?.emptyText ?? 'No Data' }}
+      </div>
+      <!-- To do : search, sort, check box, action buttons -->
+      <table class="table table-hover table-striped mb-0 align-middle">
+        <thead class="table-light">
+          <tr>
+            <th
+              *ngFor="let column of visibleColumns; trackBy: trackByColId"
+              [class]="column.headerClass ?? ''"
+            >
+              {{ column.title }}
+            </th>
+          </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let row of rows">
-                <td *ngFor="let column of visibleColumns;trackBy: trackByColId" [class]="column.cellClass??''"
-                    [title]="displayValue(row,column)">
-                    {{displayValue(row,column)}}
-                </td>
-            </tr>
+          <tr *ngFor="let row of rows">
+            <td
+              *ngFor="let column of visibleColumns; trackBy: trackByColId"
+              [class]="column.cellClass ?? ''"
+              [title]="displayValue(row, column)"
+            >
+              {{ displayValue(row, column) }}
+            </td>
+          </tr>
         </tbody>
-    </table>
-    <!-- To do : pagination -->
+      </table>
+      <!-- To do : pagination -->
+    </div>
+  </div>
 </div>
